@@ -8,11 +8,10 @@ const HOST = env.HOST || 'localhost';
 
 export const makeApp = (): Application => {
   const app = new Application();
+  app.use(oakCors())
   app.use(errorHandler);
   app.use(router.routes());
   app.use(router.allowedMethods());
-  app.use(oakCors())
-
 
   console.log(`Server running on port ${PORT}`);
 
