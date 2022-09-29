@@ -25,7 +25,7 @@ export class ListCfopController implements HttpController {
 
     let cfopData = await this.cfopProvider.getCfopList();
 
-    if (request.query) {
+    if (request.query.get('search')) {
       const search = request.query.get('search')
       cfopData = cfopData.filter((cfop) => {
         return (

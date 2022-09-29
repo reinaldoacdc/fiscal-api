@@ -12,21 +12,21 @@ export class ListNcmController implements HttpController {
     this.ncmProvider = dependencies.ncmProvider
   }
 
-  async handle (request: HttpRequest): Promise<HttpResponse>{
+  async handle (request: HttpRequest): Promise<HttpResponse> {
 
     const searchByDescription = (input: string, search: string) => {
       return String(input).toLowerCase().includes(search.toLowerCase());
     };
-    
+
     const searchByCode = (input: string, search: string) => {
       return input.replace(/\D/g, '').startsWith(search.replace(/[,.]/, ''));
     };
-    
-    
+
+
     let ncmData = await this.ncmProvider.getNcmList();
-    
-    if (request.query) {
-      const search  = request.query.get('search')
+
+    if (request.query.get('search')) {
+      const search = request.query.get('search')
       ncmData = ncmData.filter((ncm) => {
         return (
           searchByDescription(ncm.Descricao, search!) ||
@@ -34,7 +34,7 @@ export class ListNcmController implements HttpController {
         );
       });
     }
-    
+
     return handleSucess(ncmData)
   }
 }

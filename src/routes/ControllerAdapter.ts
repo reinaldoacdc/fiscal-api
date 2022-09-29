@@ -3,7 +3,7 @@ import { HttpController, HttpRequest } from "./ControllerProtocols.ts"
 import { Response } from "../deps.ts";
 
 
-  export const adaptOakRoute = (controller: HttpController) =>
+export const adaptOakRoute = (controller: HttpController) =>
   async (context: any): Promise<Response> => {
     const request: HttpRequest = {
       headers: context.request.headers,
