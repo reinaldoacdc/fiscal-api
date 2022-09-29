@@ -7,3 +7,5 @@ export { serve }
 import { Application, Router, Context, Request, Response } from "https://deno.land/x/oak@v11.1.0/mod.ts";
 export { Router, Application, Context, Request, Response }
 
+import { oakCors } from "https://deno.land/x/cors/mod.ts";
+export { oakCors }
