@@ -1,0 +1,12 @@
+import { assertEquals } from "https://deno.land/std@0.156.0/testing/asserts.ts";
+import { superoak } from "https://deno.land/x/superoak/mod.ts";
+import { makeApp } from "../src/server.ts";
+import { makeNcmController } from "../src/usecases/ncm/index.ts";
+
+Deno.test("url test", async() => {
+  const app = makeApp()
+  const request = await superoak(app);
+  await request.get("/ncm")
+    .set("Content-Type", "application/json")
+    .expect(200);
+});
