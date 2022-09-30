@@ -1,6 +1,6 @@
-import { CfopProvider } from "./providers.ts";
+import { CfopProvider } from "../providers.ts";
 import cfopList from './cfopList.json' assert { type: "json" };
-import { Cfop } from "../entities/cfop.ts";
+import { Cfop } from "../../entities/cfop.ts";
 
 
 export class GistCfopProvider implements CfopProvider {

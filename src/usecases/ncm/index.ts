@@ -1,5 +1,5 @@
 import { HttpController } from "../../routes/ControllerProtocols.ts";
-import { SefazNcmProvider } from "../../services/ncmProvider.ts";
+import { SefazNcmProvider } from "../../services/ncm/ncmProvider.ts";
 import { GetNcmController } from "./GetNcmController.ts";
 import { ListNcmController } from "./ListNcmController.ts";
 

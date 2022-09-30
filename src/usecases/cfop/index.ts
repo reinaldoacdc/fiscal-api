@@ -1,5 +1,5 @@
 import { HttpController } from "../../routes/ControllerProtocols.ts"
-import { GistCfopProvider } from "../../services/cfopProvider.ts";
+import { GistCfopProvider } from "../../services/cfop/cfopProvider.ts";
 import { GetCfopController } from "./GetCfopController.ts";
 import { ListCfopController } from "./ListCfopController.ts"
 

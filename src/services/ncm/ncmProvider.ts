@@ -1,7 +1,7 @@
-import { NcmProvider } from "./providers.ts";
+import { NcmProvider } from "../providers.ts";
 import ncmList from './ncmList.json' assert { type: "json" };
-import { axiod } from "../deps.ts";
-import { Ncm } from "../entities/ncm.ts";
+import { axiod } from "../../deps.ts";
+import { Ncm } from "../../entities/ncm.ts";
 
 export class SefazNcmProvider implements NcmProvider {
 
