@@ -29,8 +29,8 @@ export class ListNcmController implements HttpController {
       const search = request.query.get('search')
       ncmData = ncmData.filter((ncm) => {
         return (
-          searchByDescription(ncm.Descricao, search!) ||
-          searchByCode(ncm.Codigo, search!)
+          searchByDescription(ncm.descricao, search!) ||
+          searchByCode(ncm.codigo, search!)
         );
       });
     }

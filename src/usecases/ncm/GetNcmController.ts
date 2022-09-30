@@ -14,7 +14,6 @@ export class GetNcmController implements HttpController {
 
   async handle (request: HttpRequest): Promise<HttpResponse> {
     const { code } = request.params;
-    console.log('code: ', code)
     const ncmCode = code!.replace(/\D/g, '');
     const allNcmData = await this.ncmProvider.getNcmList();
     const ncmData = allNcmData.find(
