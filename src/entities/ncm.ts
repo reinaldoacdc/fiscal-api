@@ -1,9 +1,9 @@
 export interface Ncm {
-  Codigo: string
-  Descricao: string
-  Data_Inicio: string
-  Data_Fim: string
-  Tipo_Ato: string
-  Numero_Ato: string
-  Ano_Ato: string
+  codigo: string
+  descricao: string
+  data_Inicio: string
+  data_Fim: string
+  tipo_Ato: string
+  numero_Ato: string
+  ano_Ato: string
 }
