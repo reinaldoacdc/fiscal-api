@@ -17,4 +17,5 @@ export interface CestProvider {
 
 export interface ImpostoProvider {
   getImpostoUf: (uf: string) => Promise<Imposto[]>
+  getImposto: () => Promise<Imposto[]>
 }

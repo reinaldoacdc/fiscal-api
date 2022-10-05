@@ -22,5 +22,21 @@ export class IbptImpostoProvider implements ImpostoProvider {
 
     return impostoList
   }
-  
+ 
+  async getImposto(): Promise<Imposto[]>  {
+    let list: Imposto[] = []
+    for await (const dirEntry of Deno.readDir('./src/services/imposto')) {
+      if(dirEntry.name.includes('.csv')){
+        
+        const index = dirEntry.name.indexOf('.csv')
+        const uf = dirEntry.name.substring(0, index)
+        const imposto = await this.getImpostoUf(uf)
+        list = list.concat(imposto)
+      }
+      
+    }
+    return list
+
+  }
+
 }
